@@ -12,6 +12,7 @@
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <jfairy.version>0.5.7</jfairy.version>
     <junit.platform.version>1.0.0-M4</junit.platform.version>
