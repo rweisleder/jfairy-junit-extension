@@ -5,20 +5,47 @@
 [jFairy](http://codearte.github.io/jfairy/) is a fake data generator.
 This JUnit extension provides simple injection of fake data into fields and method parameters.
 
-Inject fake data as method parameter:
 ```java
 @Test
 @ExtendWith(FairyExtension.class)
 void withRandomPerson(@Random Person person) {
-  // ...
+  System.out.println(person.getFullName());
+  // Chloe Barker
 }
 ```
 
-Inject fake data as field:
+## Documentation
+
+### Setup
+This extension resolves fields and method parameters annotated with `@Random`.
 ```java
 @ExtendWith(FairyExtension.class)
-class RandomTest {
+class MyTest {
+  
   @Random
-  private Person person;
+  private Person person1;
+
+  @Test
+  void example(@Random Person person2) {
+    // ...
+  }
 }
 ```
+
+The random generator can be customized with a locale and a seed.
+```java
+@Random(locale = "de", seed = 1234)
+```
+
+### Supported Object Types
+*   `Person` which can be customized using `@PersonWith`
+
+    ```java
+    @Random
+    @PersonWith(sex = MALE, minAge = 13, maxAge = 19)
+    private Person maleTeenager;
+    ```
+
+
+## Samples
+Look into the [FairyExtensionTest](src/test/java/io/github/rweisleder/jfairy/FairyExtensionTest.java).
