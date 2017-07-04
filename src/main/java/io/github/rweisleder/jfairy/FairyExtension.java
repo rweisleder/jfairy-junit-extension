@@ -41,13 +41,15 @@ public class FairyExtension implements ParameterResolver, TestInstancePostProces
   }
 
   @Override
-  public boolean supports(ParameterContext parameterContext, ExtensionContext extensionContext) {
+  public boolean supportsParameter(ParameterContext parameterContext,
+      ExtensionContext extensionContext) {
     Parameter parameter = parameterContext.getParameter();
     return supports(parameter, parameter.getType());
   }
 
   @Override
-  public Object resolve(ParameterContext parameterContext, ExtensionContext extensionContext) {
+  public Object resolveParameter(ParameterContext parameterContext,
+      ExtensionContext extensionContext) {
     Parameter parameter = parameterContext.getParameter();
     return resolve(parameter, parameter.getType());
   }
