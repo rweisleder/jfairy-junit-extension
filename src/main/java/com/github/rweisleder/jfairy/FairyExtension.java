@@ -37,6 +37,10 @@ public class FairyExtension implements ParameterResolver, TestInstancePostProces
     providers.put(boolean.class, booleanProvider);
     providers.put(Boolean.class, booleanProvider);
 
+    IntegerProvider integerProvider = new IntegerProvider();
+    providers.put(int.class, integerProvider);
+    providers.put(Integer.class, integerProvider);
+
     providers.put(Person.class, new PersonProvider());
   }
 

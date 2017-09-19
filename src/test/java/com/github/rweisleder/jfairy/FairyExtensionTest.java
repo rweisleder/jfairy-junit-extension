@@ -32,6 +32,36 @@ class FairyExtensionTest {
     }
 
     @Test
+    void primitiveInt(@Random int i) {
+      assertThat(i).isGreaterThan(0);
+    }
+
+    @Test
+    void integerObject(@Random Integer i) {
+      assertNotNull(i);
+    }
+
+    @Nested
+    class IntegerTest {
+
+      @Test
+      void minValue(@Random @IntegerWith(min = 100) int i) {
+        assertThat(i).isGreaterThanOrEqualTo(100);
+      }
+
+      @Test
+      void maxValue(@Random @IntegerWith(max = 100) int i) {
+        assertThat(i).isLessThanOrEqualTo(100);
+      }
+
+      @Test
+      void range(@Random @IntegerWith(min = 50, max = 100) int i) {
+        assertThat(i).isBetween(50, 100);
+      }
+
+    }
+
+    @Test
     void person(@Random Person person) {
       assertNotNull(person);
     }
@@ -86,6 +116,14 @@ class FairyExtensionTest {
     @Test
     void booleanObject() {
       assertNotNull(aBoolean);
+    }
+
+    @Random
+    private Integer i;
+
+    @Test
+    void integerObject() {
+      assertNotNull(i);
     }
 
     @Random

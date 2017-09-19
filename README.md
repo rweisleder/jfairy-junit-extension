@@ -39,6 +39,13 @@ The random generator can be customized with a locale and a seed.
 
 ### Supported Object Types
 *   `boolean` and `Boolean`
+*   `int` and `Integer` which can be customized using `@IntegerWith`
+
+    ```java
+    @Random
+    @IntegerWith(min = 50, max = 100)
+    private int i;
+    ```
 *   `Person` which can be customized using `@PersonWith`
 
     ```java
