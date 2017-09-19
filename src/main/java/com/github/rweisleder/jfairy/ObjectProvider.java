@@ -10,9 +10,9 @@ import java.util.Locale;
 /**
  * @author Roland Weisleder
  */
-abstract class ObjectProvider {
+abstract class ObjectProvider<T> {
 
-  abstract Object createFor(AnnotatedElement annotatedElement);
+  abstract T createFor(AnnotatedElement annotatedElement);
 
   Fairy fairy(AnnotatedElement annotatedElement) {
     Random random = findAnnotation(annotatedElement, Random.class).get();

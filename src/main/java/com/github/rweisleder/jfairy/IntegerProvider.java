@@ -8,10 +8,10 @@ import java.lang.reflect.AnnotatedElement;
 /**
  * @author Roland Weisleder
  */
-class IntegerProvider extends ObjectProvider {
+class IntegerProvider extends ObjectProvider<Integer> {
 
   @Override
-  Object createFor(AnnotatedElement annotatedElement) {
+  Integer createFor(AnnotatedElement annotatedElement) {
     IntegerWith config = findAnnotation(annotatedElement, IntegerWith.class).orElse(null);
     int min = minValue(config);
     int max = maxValue(config);
