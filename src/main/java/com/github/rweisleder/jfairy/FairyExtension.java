@@ -33,6 +33,10 @@ public class FairyExtension implements ParameterResolver, TestInstancePostProces
   private static final Map<Class<?>, ObjectProvider> providers = new HashMap<>();
 
   static {
+    BooleanProvider booleanProvider = new BooleanProvider();
+    providers.put(boolean.class, booleanProvider);
+    providers.put(Boolean.class, booleanProvider);
+
     providers.put(Person.class, new PersonProvider());
   }
 

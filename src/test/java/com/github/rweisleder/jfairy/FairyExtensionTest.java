@@ -22,6 +22,16 @@ class FairyExtensionTest {
   class ParameterResolverTest {
 
     @Test
+    void primitiveBoolean(@Random boolean aBoolean) {
+      // nothing to do
+    }
+
+    @Test
+    void booleanObject(@Random Boolean aBoolean) {
+      assertNotNull(aBoolean);
+    }
+
+    @Test
     void person(@Random Person person) {
       assertNotNull(person);
     }
@@ -65,11 +75,18 @@ class FairyExtensionTest {
       }
 
     }
-
   }
 
   @Nested
   class TestInstancePostProcessorTest {
+
+    @Random
+    private Boolean aBoolean;
+
+    @Test
+    void booleanObject() {
+      assertNotNull(aBoolean);
+    }
 
     @Random
     private Person person;

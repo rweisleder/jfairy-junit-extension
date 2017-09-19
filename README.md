@@ -38,6 +38,7 @@ The random generator can be customized with a locale and a seed.
 ```
 
 ### Supported Object Types
+*   `boolean` and `Boolean`
 *   `Person` which can be customized using `@PersonWith`
 
     ```java
@@ -48,4 +49,4 @@ The random generator can be customized with a locale and a seed.
 
 
 ## Samples
-Look into the [FairyExtensionTest](src/test/java/io/github/rweisleder/jfairy/FairyExtensionTest.java).
+Look into the [FairyExtensionTest](src/test/java/com/github/rweisleder/jfairy/FairyExtensionTest.java).
