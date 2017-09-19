@@ -56,4 +56,4 @@ The random generator can be customized with a locale and a seed.
 
 
 ## Samples
-Look into the [FairyExtensionTest](src/test/java/com/github/rweisleder/jfairy/FairyExtensionTest.java).
+Look into the [ExampleTests](src/test/java/com/github/rweisleder/jfairy/ExampleTests.java).
