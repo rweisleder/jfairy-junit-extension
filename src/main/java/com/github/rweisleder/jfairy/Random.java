@@ -1,4 +1,4 @@
-package io.github.rweisleder.jfairy;
+package com.github.rweisleder.jfairy;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

@@ -1,4 +1,4 @@
-package io.github.rweisleder.jfairy;
+package com.github.rweisleder.jfairy;
 
 import static io.codearte.jfairy.producer.person.Person.Sex.FEMALE;
 import static io.codearte.jfairy.producer.person.Person.Sex.MALE;

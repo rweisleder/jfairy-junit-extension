@@ -1,4 +1,4 @@
-package io.github.rweisleder.jfairy;
+package com.github.rweisleder.jfairy;
 
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 
