@@ -1,5 +1,6 @@
 package com.github.rweisleder.jfairy;
 
+import static com.github.rweisleder.jfairy.StringWith.StringType.WORD;
 import static io.codearte.jfairy.producer.person.Person.Sex.MALE;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -31,6 +32,28 @@ class ExampleTests {
   @Test
   void test_maleTeenager() {
     assertThat(maleTeenager.getAge()).isBetween(13, 19);
+  }
+
+  // -------------------------------------
+
+  @Random
+  @StringWith(maxLength = 20)
+  private String s;
+
+  @Test
+  void test_randomString() {
+    assertThat(s.length()).isLessThanOrEqualTo(20);
+  }
+
+  // -------------------------------------
+
+  @Random(locale = "de", seed = 1337)
+  @StringWith(type = WORD)
+  private String germanWord;
+
+  @Test
+  void test_germanWord() {
+    assertThat(germanWord).isEqualTo("und");
   }
 
   // -------------------------------------

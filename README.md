@@ -46,6 +46,17 @@ The random generator can be customized with a locale and a seed.
     @IntegerWith(min = 50, max = 100)
     private int i;
     ```
+*   `String` which can be customized using `@StringWith`
+
+    ```java
+    @Random
+    @StringWith(maxLength = 20)
+    private String randomString;
+
+    @Random(locale = "de")
+    @StringWith(type = WORD)
+    private String germanWord;
+    ```
 *   `Person` which can be customized using `@PersonWith`
 
     ```java

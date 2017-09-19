@@ -14,8 +14,8 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 import org.junit.jupiter.api.extension.TestInstancePostProcessor;
 
 /**
- * {@link FairyExtension} provides fake data for fields and method parameters
- * annotated with {@link Random @Random}.
+ * {@link FairyExtension} provides fake data for fields and method parameters annotated with {@link
+ * Random @Random}.
  *
  * <p>
  * <pre>
@@ -40,6 +40,8 @@ public class FairyExtension implements ParameterResolver, TestInstancePostProces
     IntegerProvider integerProvider = new IntegerProvider();
     providers.put(int.class, integerProvider);
     providers.put(Integer.class, integerProvider);
+
+    providers.put(String.class, new StringProvider());
 
     providers.put(Person.class, new PersonProvider());
   }

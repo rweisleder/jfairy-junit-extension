@@ -38,6 +38,18 @@ class TestInstancePostProcessorTests {
   }
 
   @Nested
+  class StringTests {
+
+    @Random
+    private String s;
+
+    @Test
+    void string() {
+      assertNotNull(s);
+    }
+  }
+
+  @Nested
   class PersonTests {
 
     @Random
