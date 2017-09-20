@@ -2,8 +2,8 @@
 
 [![Build Status](https://travis-ci.org/rweisleder/jfairy-junit-extension.svg?branch=master)](https://travis-ci.org/rweisleder/jfairy-junit-extension)
 
-[jFairy](http://codearte.github.io/jfairy/) is a fake data generator.
-This JUnit extension provides simple injection of fake data into fields and method parameters.
+[jFairy](https://github.com/Devskiller/jfairy) is a fake data generator.
+This JUnit extension provides simple injection of random data into fields and method parameters.
 
 ```java
 @Test

@@ -11,7 +11,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Customize the generated person
+ * Customize the generated Person
  *
  * @author Roland Weisleder
  * @see io.codearte.jfairy.producer.person.PersonProperties

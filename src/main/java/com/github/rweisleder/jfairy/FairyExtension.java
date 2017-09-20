@@ -21,10 +21,9 @@ import org.junit.jupiter.api.extension.TestInstancePostProcessor;
  * <pre>
  * &#064;Test
  * &#064;ExtendWith(FairyExtension.class)
- * void withRandomPerson(@Random Person person) {
+ * void withRandomPerson(&#064;Random Person person) {
  * }
  * </pre>
- * </p>
  *
  * @author Roland Weisleder
  */
