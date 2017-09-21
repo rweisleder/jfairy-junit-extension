@@ -1,6 +1,7 @@
 # JUnit Extension for jFairy
 
 [![Build Status](https://travis-ci.org/rweisleder/jfairy-junit-extension.svg?branch=master)](https://travis-ci.org/rweisleder/jfairy-junit-extension)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.rweisleder/jfairy-junit-extension/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.rweisleder/jfairy-junit-extension)
 
 [jFairy](https://github.com/Devskiller/jfairy) is a fake data generator.
 This JUnit extension provides simple injection of random data into fields and method parameters.
