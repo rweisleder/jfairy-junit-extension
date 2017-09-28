@@ -10,11 +10,28 @@ import java.util.Locale;
 /**
  * @author Roland Weisleder
  */
-abstract class ObjectProvider<T> {
+abstract class ObjectProvider {
 
-  abstract T createFor(AnnotatedElement annotatedElement);
+  abstract boolean supports(Class<?> targetType);
 
-  Fairy fairy(AnnotatedElement annotatedElement) {
+  final boolean isAssignableFrom(Class<?> targetType, Class<?>[] supportedClasses) {
+    for (Class<?> supportedClass : supportedClasses) {
+      if (targetType.isAssignableFrom(supportedClass)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  abstract Object createFor(AnnotatedElement annotatedElement, Class<?> targetType,
+      Fairy fairy);
+
+  final Object createFor(AnnotatedElement annotatedElement, Class<?> targetType) {
+    Fairy fairy = buildFairy(annotatedElement);
+    return createFor(annotatedElement, targetType, fairy);
+  }
+
+  private Fairy buildFairy(AnnotatedElement annotatedElement) {
     Random random = findAnnotation(annotatedElement, Random.class).get();
     Builder builder = Fairy.builder();
 

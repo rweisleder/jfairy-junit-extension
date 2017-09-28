@@ -63,6 +63,12 @@ The random generator can be customized with a locale and a seed.
     @StringWith(type = WORD)
     private String germanWord;
     ```
+*   Enum types
+
+    ```java
+    @Random
+    private Month month;
+    ```
 *   `Person` which can be customized using `@PersonWith`
 
     ```java

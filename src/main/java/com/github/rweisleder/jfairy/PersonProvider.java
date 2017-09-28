@@ -4,6 +4,7 @@ import static io.codearte.jfairy.producer.person.Person.Sex.FEMALE;
 import static io.codearte.jfairy.producer.person.Person.Sex.MALE;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 
+import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.person.Person;
 import io.codearte.jfairy.producer.person.Person.Sex;
 import io.codearte.jfairy.producer.person.PersonProperties;
@@ -16,13 +17,18 @@ import java.util.Optional;
 /**
  * @author Roland Weisleder
  */
-class PersonProvider extends ObjectProvider<Person> {
+class PersonProvider extends ObjectProvider {
 
   @Override
-  Person createFor(AnnotatedElement annotatedElement) {
+  boolean supports(Class<?> targetType) {
+    return isAssignableFrom(targetType, new Class[]{Person.class});
+  }
+
+  @Override
+  Object createFor(AnnotatedElement annotatedElement, Class<?> targetType, Fairy fairy) {
     PersonProperty[] properties = createProperties(annotatedElement);
 
-    return fairy(annotatedElement).person(properties);
+    return fairy.person(properties);
   }
 
   private PersonProperty[] createProperties(AnnotatedElement annotatedElement) {

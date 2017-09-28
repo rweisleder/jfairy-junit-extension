@@ -2,21 +2,27 @@ package com.github.rweisleder.jfairy;
 
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 
+import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.BaseProducer;
 import java.lang.reflect.AnnotatedElement;
 
 /**
  * @author Roland Weisleder
  */
-class IntegerProvider extends ObjectProvider<Integer> {
+class IntegerProvider extends ObjectProvider {
 
   @Override
-  Integer createFor(AnnotatedElement annotatedElement) {
+  boolean supports(Class<?> targetType) {
+    return isAssignableFrom(targetType, new Class[]{Integer.class, Integer.TYPE});
+  }
+
+  @Override
+  Object createFor(AnnotatedElement annotatedElement, Class<?> targetType, Fairy fairy) {
     IntegerWith config = findAnnotation(annotatedElement, IntegerWith.class).orElse(null);
     int min = minValue(config);
     int max = maxValue(config);
 
-    BaseProducer producer = fairy(annotatedElement).baseProducer();
+    BaseProducer producer = fairy.baseProducer();
     return producer.randomBetween(min, max);
   }
 

@@ -5,6 +5,7 @@ import static io.codearte.jfairy.producer.person.Person.Sex.MALE;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import io.codearte.jfairy.producer.person.Person;
+import java.time.Month;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
@@ -36,6 +37,16 @@ class ExampleTests {
 
   // -------------------------------------
 
+  @Random(locale = "de", seed = 1337)
+  private Person germanPerson;
+
+  @Test
+  void test_germanPerson() {
+    assertThat(germanPerson.getFirstName()).isEqualTo("Friedbald");
+  }
+
+  // -------------------------------------
+
   @Random
   @StringWith(maxLength = 20)
   private String s;
@@ -58,12 +69,12 @@ class ExampleTests {
 
   // -------------------------------------
 
-  @Random(locale = "de", seed = 1337)
-  private Person germanPerson;
+  @Random
+  private Month month;
 
   @Test
-  void test_germanPerson() {
-    assertThat(germanPerson.getFirstName()).isEqualTo("Friedbald");
+  void test_enumValue() {
+    assertThat(month).isNotNull();
   }
 
   // -------------------------------------

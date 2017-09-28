@@ -7,17 +7,19 @@ import java.lang.reflect.AnnotatedElement;
 /**
  * @author Roland Weisleder
  */
-class BooleanProvider extends ObjectProvider {
+class EnumProvider extends ObjectProvider {
 
   @Override
   boolean supports(Class<?> targetType) {
-    return isAssignableFrom(targetType, new Class[]{Boolean.class, Boolean.TYPE});
+    return targetType.isEnum();
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   Object createFor(AnnotatedElement annotatedElement, Class<?> targetType, Fairy fairy) {
-    BaseProducer producer = fairy.baseProducer();
-    return producer.trueOrFalse();
-  }
+    Class<Enum<?>> enumClass = (Class<Enum<?>>) targetType;
 
+    BaseProducer producer = fairy.baseProducer();
+    return producer.randomElement(enumClass);
+  }
 }

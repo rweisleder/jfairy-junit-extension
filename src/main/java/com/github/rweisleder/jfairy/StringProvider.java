@@ -11,6 +11,7 @@ import static com.github.rweisleder.jfairy.StringWith.StringType.WORD;
 import static org.junit.platform.commons.support.AnnotationSupport.findAnnotation;
 
 import com.github.rweisleder.jfairy.StringWith.StringType;
+import io.codearte.jfairy.Fairy;
 import io.codearte.jfairy.producer.text.TextProducer;
 import java.lang.reflect.AnnotatedElement;
 import java.util.HashMap;
@@ -19,7 +20,7 @@ import java.util.Map;
 /**
  * @author Roland Weisleder
  */
-class StringProvider extends ObjectProvider<String> {
+class StringProvider extends ObjectProvider {
 
   private static final Map<StringType, TypedStringProvider> providers = new HashMap<>();
 
@@ -35,12 +36,17 @@ class StringProvider extends ObjectProvider<String> {
   }
 
   @Override
-  String createFor(AnnotatedElement annotatedElement) {
+  boolean supports(Class<?> targetType) {
+    return isAssignableFrom(targetType, new Class[]{String.class});
+  }
+
+  @Override
+  Object createFor(AnnotatedElement annotatedElement, Class<?> targetType, Fairy fairy) {
     StringWith config = findAnnotation(annotatedElement, StringWith.class).orElse(null);
     int maxLength = maxLength(config);
     StringType type = type(config);
 
-    TextProducer producer = fairy(annotatedElement).textProducer().limitedTo(maxLength);
+    TextProducer producer = fairy.textProducer().limitedTo(maxLength);
     return providers.get(type).produce(producer, maxLength);
   }
 

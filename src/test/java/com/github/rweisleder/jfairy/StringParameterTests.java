@@ -24,6 +24,11 @@ class StringParameterTests {
   }
 
   @Test
+  void charSequence(@Random CharSequence charSequence) {
+    assertThat(charSequence).isNotEmpty();
+  }
+
+  @Test
   void maxLength(@Random @StringWith(maxLength = 10) String s) {
     assertThat(s.length()).isBetween(1, 10);
   }

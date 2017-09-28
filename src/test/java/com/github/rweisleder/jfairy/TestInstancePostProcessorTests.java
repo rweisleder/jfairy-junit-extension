@@ -3,6 +3,7 @@ package com.github.rweisleder.jfairy;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import io.codearte.jfairy.producer.person.Person;
+import java.time.Month;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -46,6 +47,18 @@ class TestInstancePostProcessorTests {
     @Test
     void string() {
       assertNotNull(s);
+    }
+  }
+
+  @Nested
+  class EnumTests {
+
+    @Random
+    private Month month;
+
+    @Test
+    void enumValue() {
+      assertNotNull(month);
     }
   }
 
