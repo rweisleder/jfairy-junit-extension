@@ -28,10 +28,10 @@ public @interface Random {
   /**
    * Random seed used by jFairy
    *
-   * @see io.codearte.jfairy.Bootstrap.Builder#withRandomSeed(long)
+   * @see io.codearte.jfairy.Bootstrap.Builder#withRandomSeed(int)
    */
-  long seed() default DEFAULT_SEED;
+  int seed() default DEFAULT_SEED;
 
-  long DEFAULT_SEED = -1;
+  int DEFAULT_SEED = -1;
 
 }

@@ -40,7 +40,7 @@ abstract class ObjectProvider {
       builder.withLocale(Locale.forLanguageTag(locale));
     }
 
-    long seed = random.seed();
+    int seed = random.seed();
     if (Random.DEFAULT_SEED != seed) {
       builder.withRandomSeed(seed);
     }
