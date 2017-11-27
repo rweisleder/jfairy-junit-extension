@@ -121,6 +121,9 @@
                   <Built-By>rweisleder</Built-By>
                 </manifestEntries>
               </archive>
+              <links>
+                <link>http://junit.org/junit5/docs/${junit.jupiter.version}/api/</link>
+              </links>
             </configuration>
           </execution>
         </executions>

@@ -24,6 +24,16 @@ import org.junit.jupiter.api.extension.TestInstancePostProcessor;
  * }
  * </pre>
  *
+ * <p>
+ *   Supported object types:
+ *   <ul>
+ *     <li>{@link Boolean} and boolean</li>
+ *     <li>{@link Integer} and int (see also {@link IntegerWith})</li>
+ *     <li>{@link String} (see also {@link StringWith})</li>
+ *     <li>Enum Types</li>
+ *     <li>{@link io.codearte.jfairy.producer.person.Person Person} (see also {@link PersonWith})</li>
+ *   </ul>
+ *
  * @author Roland Weisleder
  */
 public class FairyExtension implements ParameterResolver, TestInstancePostProcessor {
