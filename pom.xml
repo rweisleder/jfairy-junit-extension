@@ -48,7 +48,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <jfairy.version>0.5.8</jfairy.version>
+    <jfairy.version>0.5.9</jfairy.version>
     <junit.platform.version>1.0.2</junit.platform.version>
     <junit.jupiter.version>5.0.2</junit.jupiter.version>
     <assertj.version>3.8.0</assertj.version>
