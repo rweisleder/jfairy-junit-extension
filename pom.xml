@@ -4,7 +4,7 @@
 
   <groupId>com.github.rweisleder</groupId>
   <artifactId>jfairy-junit-extension</artifactId>
-  <version>0.2.0</version>
+  <version>0.3.0-SNAPSHOT</version>
   <name>JUnit Extension for jFairy</name>
   <description>
     Extension for JUnit which provides simple injection of random data into fields and method
@@ -30,7 +30,7 @@
       scm:git:git@github.com:rweisleder/jfairy-junit-extension.git
     </developerConnection>
     <url>http://github.com/rweisleder/jfairy-junit-extension</url>
-    <tag>jfairy-junit-extension-0.2.0</tag>
+    <tag>HEAD</tag>
   </scm>
   <distributionManagement>
     <snapshotRepository>
