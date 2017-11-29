@@ -164,6 +164,13 @@
                 <goals>
                   <goal>jar-no-fork</goal>
                 </goals>
+                <configuration>
+                  <archive>
+                    <manifestEntries>
+                      <Built-By>rweisleder</Built-By>
+                    </manifestEntries>
+                  </archive>
+                </configuration>
               </execution>
             </executions>
           </plugin>
