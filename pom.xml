@@ -51,7 +51,7 @@
     <jfairy.version>0.5.9</jfairy.version>
     <junit.platform.version>1.0.2</junit.platform.version>
     <junit.jupiter.version>5.0.2</junit.jupiter.version>
-    <assertj.version>3.8.0</assertj.version>
+    <assertj.version>3.27.7</assertj.version>
   </properties>
 
   <dependencies>
